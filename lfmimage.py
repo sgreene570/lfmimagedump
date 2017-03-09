@@ -7,6 +7,7 @@ Last fm image dump script.
 import requests
 import json
 import argparse
+import urllib.request
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
@@ -18,8 +19,11 @@ def main():
     args = parser.parse_args()
     top_albums = requests.get(LFMAPI_URL + "?method=user.gettopalbums&user="
                     + str(args.username).strip("[']") + "&api_key=" 
-                    + LFMAPI_KEY + "&format=json")
-    print(top_albums.json())
+                    + LFMAPI_KEY + "&format=json").json()
+
+    for album in top_albums["topalbums"]["album"]:
+        urllib.request.urlretrieve(album["image"][1]["#text"], album["name"])
+
 
 
 if __name__ == "__main__":
