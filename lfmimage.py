@@ -10,7 +10,6 @@ import argparse
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
-LFMAPI_KEY = ""
 
 
 def main():
@@ -18,7 +17,8 @@ def main():
     parser.add_argument("username", type=str, nargs=1, help="Last.fm username")
     args = parser.parse_args()
     top_albums = requests.get(LFMAPI_URL + "?method=user.gettopalbums&user="
-                    + str(args.username) + "&api_key=" + LFMAPI_KEY + "&format=json")
+                    + str(args.username).strip("[']") + "&api_key=" 
+                    + LFMAPI_KEY + "&format=json")
     print(top_albums.json())
 
 
