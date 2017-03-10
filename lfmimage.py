@@ -23,9 +23,9 @@ def main():
                     + LFMAPI_KEY + "&format=json").json()
 
     for album in top_albums["topalbums"]["album"]:
-        urllib.request.urlretrieve(album["image"][1]["#text"],
-                                  (album["name"] + ".png"))
-
+        url = album["image"][2]["#text"].rstrip()
+        if url is not '':
+            urllib.request.urlretrieve(url, (album["name"] + ".png"))
 
 
 if __name__ == "__main__":
