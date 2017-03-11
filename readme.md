@@ -11,7 +11,7 @@ All your top album arts will be saved as .pngs in the same folder as the script.
 <br>
 # Usage
 <br>
-<code>pip3 lfmimage.py username<code>
+<code>pip3 lfmimage.py username</code>
 <br>
 Optional arguments: 
 <br>
