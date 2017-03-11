@@ -5,10 +5,12 @@ Last fm image dump script.
 
 
 import requests
+from tqdm import tqdm
 import json
 import argparse
 import urllib.request
 import os
+
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
@@ -25,8 +27,7 @@ def get_top_album_art(username, size_index):
     top_albums = requests.get(LFMAPI_URL + "?method=user.gettopalbums&user="
                             + username + "&api_key=" + LFMAPI_KEY
                             + "&format=json").json()
-
-    for album in top_albums["topalbums"]["album"]:
+    for album in tqdm(top_albums["topalbums"]["album"]):
         url = album["image"][size_index]["#text"].rstrip()
         if url is not '':
             if not os.path.exists("albumart"):
