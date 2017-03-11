@@ -1,25 +1,20 @@
 # lfmimagedump
 Last.fm album artwork image dump script
-
 <br>
-usage: python3 lfimage.py username
-<br>
-All your top album arts will be saved as .pngs in the same folder as the script.
-# Intallation
-<br>
+# Installation
 <code>sudo pip3 install -r requirements.txt</code>
 <br>
 # Usage
+<code>python3 lfmimage.py username</code>
 <br>
-<code>pip3 lfmimage.py username<code>
+All your top album arts will be saved as .pngs in the same folder as the script.
 <br>
-Optional arguments: 
-<br>
+# Optional arguments
 <code>--small</code>
 <br>
 Fetch small sized album art images.
 <br>
-<code--large</code>
+<code>--large</code>
 <br>
 Fetch large sized album art images.
 <br>
