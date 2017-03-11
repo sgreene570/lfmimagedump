@@ -11,7 +11,7 @@ All your top album arts will be saved as .pngs in the same folder as the script.
 <br>
 # Usage
 <br>
-<code>pip3 lfmimage.py username</code>
+<code>python3 lfmimage.py username</code>
 <br>
 Optional arguments: 
 <br>
@@ -19,7 +19,7 @@ Optional arguments:
 <br>
 Fetch small sized album art images.
 <br>
-<code--large</code>
+<code>--large</code>
 <br>
 Fetch large sized album art images.
 <br>
