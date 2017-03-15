@@ -1,5 +1,6 @@
 """
-Last fm image dump script.
+Last.fm image dump script.
+Uses the Last.fm api to fetch album arts for user's top 50 albums.
 @author: Stephen Greene
 """
 
@@ -10,7 +11,6 @@ import json
 import argparse
 import urllib.request
 import os
-
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
@@ -30,7 +30,7 @@ def get_top_album_art(username, size_index):
     for album in tqdm(top_albums["topalbums"]["album"]):
         url = album["image"][size_index]["#text"].rstrip()
         if url is not '':
-            if not os.path.exists("albumart"):
+            if not os.path.exists(ALBUM_ART_DIRECTORY):
                 os.makedirs(ALBUM_ART_DIRECTORY)
 
             filename = os.path.join(ALBUM_ART_DIRECTORY, album["name"] + ".png")
@@ -38,7 +38,7 @@ def get_top_album_art(username, size_index):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="last fm image dump")
+    parser = argparse.ArgumentParser(description="Last.fm image dump")
     parser.add_argument("username", type=str, nargs=1, help="Last.fm username")
     parser.add_argument("--small", action="store_true")
     parser.add_argument("--large", action="store_true")
