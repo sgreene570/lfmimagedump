@@ -6,11 +6,12 @@ Last.fm album artwork image dump script
 <code>sudo pip3 install -r requirements.txt</code>
 <br>
 # Usage
+<br>
 <code>python3 lfmimage.py username</code>
 <br>
 All your top album arts will be saved as .pngs in the same folder as the script.
 <br>
-Optional arguments: 
+# Optional arguments
 <br>
 <code>--small</code>
 <br>
