@@ -1,7 +1,7 @@
 # lfmimagedump
 Last.fm album artwork image dump script
 <br>
-# Intallation
+# Installation
 <br>
 <code>sudo pip3 install -r requirements.txt</code>
 <br>
