@@ -11,10 +11,13 @@ import json
 import argparse
 import urllib.request
 import os
+import credentials      # for api auth (not a package)
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
-LBUM_ART_DIRECTORY = "albumart"
+ALBUM_ART_DIRECTORY = "albumart"
+LFMAPI_KEY = credentials.API_KEY        # credentials.py containing api auth
+
 # Order in which s/m/l images appear in the json object from the lfm api
 SMALL_ART_INDEX = 1
 MEDIUM_ART_INDEX = 2
