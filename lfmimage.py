@@ -14,7 +14,7 @@ import os
 
 
 LFMAPI_URL = "http://ws.audioscrobbler.com/2.0/"
-ALBUM_ART_DIRECTORY = "albumart"
+LBUM_ART_DIRECTORY = "albumart"
 # Order in which s/m/l images appear in the json object from the lfm api
 SMALL_ART_INDEX = 1
 MEDIUM_ART_INDEX = 2
